@@ -1829,14 +1829,6 @@ extends class_437 {
         return false;
     }
 
-    private static /* synthetic */ void lambda$defineModules$106(Config c, int v) {
-        c.zoomSensitivity = v;
-    }
-
-    private static /* synthetic */ int lambda$defineModules$105(Config c) {
-        return c.zoomSensitivity;
-    }
-
     static {
         RESET_FIELDS = Map.ofEntries(Map.entry("cps", new String[]{"cpsRight"}), Map.entry("keystrokes", new String[]{"keystrokesMouse", "keystrokesSpace", "keystrokesAccent"}), Map.entry("items", new String[]{"itemsTotem", "itemsPearl", "itemsGapple", "itemsCrystal", "itemsArrow", "itemsXp", "itemsShowZero", "itemsCustom"}), Map.entry("target", new String[]{"targetDistance"}), Map.entry("totempops", new String[]{"totemPopsSelf"}), Map.entry("togglesprint", new String[]{"toggleSneak", "toggleSprintHud"}), Map.entry("stacking", new String[]{"stackStyle", "stackLookback"}), Map.entry("timestamps", new String[]{"timestamps24", "timestampSeconds"}), Map.entry("fullbright", new String[]{"fullbrightStrength"}), Map.entry("mentions", new String[]{"mentionSound", "highlightWords", "mentionColor", "mentionCustomColor"}), Map.entry("chat", new String[]{"chatHistoryLimit", "chatOpacity"}), Map.entry("mousetweaks", new String[]{"tweakRmb", "tweakLmb", "tweakShift", "tweakWheel"}), Map.entry("shulker", new String[]{"shulkerMode", "shulkerScale", "shulkerBorderMode", "shulkerBgOpacity", "shulkerTitle", "shulkerEmptySlots"}), Map.entry("zoom", new String[]{"zoomToggle", "zoomLevel", "zoomSensMode", "zoomSensitivity", "zoomCinematic", "zoomScroll", "zoomScrollSpeed", "zoomSmooth"}), Map.entry("durability", new String[]{"durabilityThreshold", "durabilitySound", "durabilityChat"}), Map.entry("deaths", new String[]{"deathAnnounce"}), Map.entry("reconnect", new String[]{"autoReconnect", "autoReconnectDelay"}), Map.entry("logos", new String[]{"badgeNametags", "badgeTab"}), Map.entry("clips", new String[]{"clipFps", "clipWidth", "saveEveryDisconnect", "punishmentPhrases", "maxClipStorageMb"}), Map.entry("crosshair", new String[]{"crosshairLength", "crosshairGap", "crosshairThickness", "crosshairDot", "crosshairColor", "crosshairOutline", "crosshairMode", "crosshairImageSize", "crosshairOpacity", "crosshairTint", "crosshairCustomColor"}));
         HUD_IDS = Set.of("fps", "ping", "coords", "biome", "clock", "armor", "cps", "togglesprint", "keystrokes", "target", "potions", "items");
