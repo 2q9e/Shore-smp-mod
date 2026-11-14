@@ -4,7 +4,6 @@
 package net.shoresmp.fabric;
 
 import java.io.IOException;
-import java.lang.invoke.LambdaMetafactory;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.nio.file.Files;
@@ -348,7 +347,9 @@ extends class_437 {
             Row mode = s.segment("Sensitivity mode", "Dynamic slows the mouse more the further you zoom", new String[]{"Static", "Dynamic"}, () -> c.zoomSensMode, v -> {
                 c.zoomSensMode = v;
             });
-            s.slider((String)"Static sensitivity", (String)"Mouse speed while zoomed, in Static mode", (int)5, (int)100, (int)5, (String)"%", (IntSupplier)(IntSupplier)LambdaMetafactory.metafactory(null, null, null, ()I, lambda$defineModules$105(net.shoresmp.fabric.Config ), ()I)((Config)c), (IntConsumer)(IntConsumer)LambdaMetafactory.metafactory(null, null, null, (I)V, lambda$defineModules$106(net.shoresmp.fabric.Config int ), (I)V)((Config)c)).available = () -> c.zoomSensMode == 0;
+            s.slider("Static sensitivity", "Mouse speed while zoomed, in Static mode", 5, 100, 5, "%", () -> c.zoomSensitivity, v -> {
+                c.zoomSensitivity = v;
+            }).available = () -> c.zoomSensMode == 0;
             s.toggle("Smooth movement", "Cinematic camera while zoomed", () -> c.zoomCinematic, v -> {
                 c.zoomCinematic = v;
             });
