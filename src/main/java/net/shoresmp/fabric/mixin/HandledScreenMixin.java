@@ -20,6 +20,7 @@ import net.minecraft.class_1747;
 import net.minecraft.class_1767;
 import net.minecraft.class_1792;
 import net.minecraft.class_1799;
+import net.minecraft.class_2248;
 import net.minecraft.class_2371;
 import net.minecraft.class_2480;
 import net.minecraft.class_2561;
@@ -135,27 +136,27 @@ extends class_437 {
             if (slot != null) {
                 this.shore$place(slot);
             }
-            cir.setReturnValue((Object)true);
+            cir.setReturnValue(true);
         } else if (button == 0 && shift && HandledScreenMixin.shore$on(c.tweakShift)) {
             this.shore$mode = 2;
             if (slot != null) {
                 this.shore$visited.add(slot);
                 if (!this.shore$matches(slot)) {
-                    cir.setReturnValue((Object)true);
+                    cir.setReturnValue(true);
                     this.shore$visited.remove(slot);
                 }
             } else {
-                cir.setReturnValue((Object)true);
+                cir.setReturnValue(true);
             }
         } else if (button == 0 && !shift && !cursor.method_7960() && HandledScreenMixin.shore$on(c.tweakLmb)) {
             if (slot == null) {
                 this.shore$mode = 3;
-                cir.setReturnValue((Object)true);
+                cir.setReturnValue(true);
             } else if (slot.method_7681() && class_1799.method_31577((class_1799)slot.method_7677(), (class_1799)cursor)) {
                 this.shore$mode = 3;
                 this.shore$visited.add(slot);
                 this.shore$collect(slot);
-                cir.setReturnValue((Object)true);
+                cir.setReturnValue(true);
             }
         }
     }
@@ -171,7 +172,7 @@ extends class_437 {
             return;
         }
         this.shore$step(click.comp_4798(), click.comp_4799());
-        cir.setReturnValue((Object)true);
+        cir.setReturnValue(true);
     }
 
     @Inject(method={"method_71085"}, at={@At(value="HEAD")})
@@ -194,7 +195,7 @@ extends class_437 {
         int button = click.method_74245();
         if (this.shore$mode == 1 && button == 1 || this.shore$mode == 3 && button == 0) {
             this.shore$reset();
-            cir.setReturnValue((Object)true);
+            cir.setReturnValue(true);
         } else if (this.shore$mode == 2 && button == 0) {
             this.shore$reset();
         }
@@ -303,7 +304,7 @@ extends class_437 {
         }
         boolean bl = done = vertical < 0.0 ? this.shore$pushOne(slot) : this.shore$pullOne(slot);
         if (done || slot.method_7681()) {
-            cir.setReturnValue((Object)true);
+            cir.setReturnValue(true);
         }
     }
 
@@ -373,17 +374,19 @@ extends class_437 {
     @Inject(method={"method_2380"}, at={@At(value="HEAD")}, cancellable=true)
     private void shore$shulkerTooltip(class_332 ctx, int mx, int my, CallbackInfo ci) {
         long w;
-        class_1747 block;
         Config c = HandledScreenMixin.shore$cfg();
         if (c == null || !c.shulkerPreview || this.field_2787 == null || !this.field_2797.method_34255().method_7960()) {
             return;
         }
         class_1799 stack = this.field_2787.method_7677();
-        class_1792 class_17922 = stack.method_7909();
-        if (!(class_17922 instanceof class_1747) || !((class_17922 = (block = (class_1747)class_17922).method_7711()) instanceof class_2480)) {
+        class_1792 item = stack.method_7909();
+        if (!(item instanceof class_1747 blockItem)) {
             return;
         }
-        class_2480 box = (class_2480)class_17922;
+        class_2248 block = blockItem.method_7711();
+        if (!(block instanceof class_2480 box)) {
+            return;
+        }
         if (c.shulkerMode == 0 && GLFW.glfwGetKey((long)(w = class_310.method_1551().method_22683().method_4490()), (int)340) != 1 && GLFW.glfwGetKey((long)w, (int)344) != 1) {
             return;
         }

@@ -162,7 +162,7 @@ extends class_437 {
 
     private void defineModules() {
         Config c = ShoreClient.config;
-        Function<String, Consumer> hudSettings = id -> s -> {
+        Function<String, Consumer<ShoreScreen>> hudSettings = id -> s -> {
             s.section("Size");
             s.slider("Element size", "Only this HUD element", 50, 250, 5, "%", () -> c.hudSize((String)id), v -> c.hudSizes.put((String)id, v));
             s.section("All HUD elements");

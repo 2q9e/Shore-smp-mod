@@ -159,7 +159,7 @@ final class ShoreSelfTest {
     }
 
     private static void scale(class_310 c, int s) {
-        c.field_1690.method_42474().method_41748((Object)s);
+        c.field_1690.method_42474().method_41748(Integer.valueOf(s));
         c.method_15993();
     }
 
@@ -395,7 +395,8 @@ final class ShoreSelfTest {
                 inv.method_5447(12, new class_1799((class_1935)class_1802.field_8145, 8));
                 inv.method_5447(13, new class_1799((class_1935)class_1802.field_8145, 8));
                 class_1799 box = new class_1799((class_1935)class_1802.field_8816);
-                box.method_57379(class_9334.field_49622, (Object)class_9288.method_57493(List.of(new class_1799((class_1935)class_1802.field_8477, 12), new class_1799((class_1935)class_1802.field_8463, 3), class_1799.field_8037, new class_1799((class_1935)class_1802.field_8634, 16), class_1799.field_8037, class_1799.field_8037, new class_1799((class_1935)class_1802.field_8288), class_1799.field_8037, class_1799.field_8037, new class_1799((class_1935)class_1802.field_8281, 64))));
+                class_9288 contents = class_9288.method_57493(List.of(new class_1799((class_1935)class_1802.field_8477, 12), new class_1799((class_1935)class_1802.field_8463, 3), class_1799.field_8037, new class_1799((class_1935)class_1802.field_8634, 16), class_1799.field_8037, class_1799.field_8037, new class_1799((class_1935)class_1802.field_8288), class_1799.field_8037, class_1799.field_8037, new class_1799((class_1935)class_1802.field_8281, 64))));
+                box.method_57379(class_9334.field_49622, contents);
                 inv.method_5447(17, box);
             });
         });
@@ -486,10 +487,10 @@ final class ShoreSelfTest {
             try {
                 Field f = class_338.class.getDeclaredField("messages");
                 f.setAccessible(true);
-                List msgs = (List)f.get(c.field_1705.method_1743());
+                List<class_303> msgs = (List<class_303>)f.get(c.field_1705.method_1743());
                 Field v = class_338.class.getDeclaredField("visibleMessages");
                 v.setAccessible(true);
-                List vis = (List)v.get(c.field_1705.method_1743());
+                List<class_303.class_7590> vis = (List<class_303.class_7590>)v.get(c.field_1705.method_1743());
                 long aCount = msgs.stream().filter(m -> m.comp_893().getString().contains("Stack test A")).count();
                 String newest = ((class_303)msgs.getFirst()).comp_893().getString();
                 String second = ((class_303)msgs.get(1)).comp_893().getString();

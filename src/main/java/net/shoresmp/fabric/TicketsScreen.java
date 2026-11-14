@@ -77,9 +77,9 @@ extends class_437 {
         if (this.waitingSince == 0L) {
             this.waitingSince = System.nanoTime();
         }
-        this.method_37063((class_364)class_4185.method_46430((class_2561)class_2561.method_43470((String)"Close"), b -> this.method_25419()).method_46434(this.window.x() + this.window.width() - 52, this.window.y() + 5, 46, 20).method_46431());
-        this.method_37063((class_364)class_4185.method_46430((class_2561)class_2561.method_43470((String)"Reload"), b -> this.restart()).method_46434(this.window.x() + this.window.width() - 108, this.window.y() + 5, 52, 20).method_46431());
-        this.method_37063((class_364)class_4185.method_46430((class_2561)class_2561.method_43470((String)"Open website"), b -> class_156.method_668().method_673(URI.create("https://www.shoresmp.net/support"))).method_46434(this.window.x() + 8, this.window.y() + this.window.height() - 27, 102, 20).method_46431());
+        this.method_37063(class_4185.method_46430((class_2561)class_2561.method_43470((String)"Close"), b -> this.method_25419()).method_46434(this.window.x() + this.window.width() - 52, this.window.y() + 5, 46, 20).method_46431());
+        this.method_37063(class_4185.method_46430((class_2561)class_2561.method_43470((String)"Reload"), b -> this.restart()).method_46434(this.window.x() + this.window.width() - 108, this.window.y() + 5, 52, 20).method_46431());
+        this.method_37063(class_4185.method_46430((class_2561)class_2561.method_43470((String)"Open website"), b -> class_156.method_668().method_673(URI.create("https://www.shoresmp.net/support"))).method_46434(this.window.x() + 8, this.window.y() + this.window.height() - 27, 102, 20).method_46431());
         if (this.browser != null) {
             this.resizeBrowser();
         } else {
@@ -158,7 +158,7 @@ extends class_437 {
     private void createBrowser() {
         this.cef = Rinku.getApp().getHandle().createClient();
         RinkuClient wrapper = new RinkuClient(this.cef);
-        this.cef.addRequestHandler((CefRequestHandler)new CefRequestHandlerAdapter(this){
+        this.cef.addRequestHandler((CefRequestHandler)new CefRequestHandlerAdapter(){
 
             public boolean onBeforeBrowse(CefBrowser b, CefFrame frame, CefRequest request, boolean gesture, boolean redirect) {
                 if (!frame.isMain()) {
@@ -219,7 +219,7 @@ extends class_437 {
                 return true;
             }
         });
-        wrapper.addContextMenuHandler((CefContextMenuHandler)new CefContextMenuHandlerAdapter(this){
+        wrapper.addContextMenuHandler((CefContextMenuHandler)new CefContextMenuHandlerAdapter(){
 
             public void onBeforeContextMenu(CefBrowser b, CefFrame frame, CefContextMenuParams params, CefMenuModel model) {
                 model.clear();

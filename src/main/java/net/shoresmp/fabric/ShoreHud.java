@@ -31,6 +31,7 @@ import net.minecraft.class_1293;
 import net.minecraft.class_1297;
 import net.minecraft.class_1304;
 import net.minecraft.class_1309;
+import net.minecraft.class_1661;
 import net.minecraft.class_1792;
 import net.minecraft.class_1799;
 import net.minecraft.class_1802;
@@ -192,7 +193,7 @@ public final class ShoreHud {
         }
         if (c.itemCounter) {
             float sc = global * (float)c.hudSize("items") / 100.0f;
-            class_1304[] inv = client.field_1724.method_31548();
+            class_1661 inv = client.field_1724.method_31548();
             for (class_1792[] group : ShoreHud.counted(c)) {
                 int n = 0;
                 for (int i = 0; i < inv.method_5439(); ++i) {
@@ -230,7 +231,7 @@ public final class ShoreHud {
         float topOffset = right && !bottom && !client.field_1724.method_6026().isEmpty() ? 52.0f : 0.0f;
         int chatH = class_338.method_1818((double)((Double)client.field_1690.method_41801().method_41753())) + 48;
         float avail = Math.max(60.0f, (float)sh - 8.0f - topOffset - (right ? 0.0f : Math.min((float)sh * 0.6f, (float)chatH)));
-        ArrayList columns = new ArrayList();
+        ArrayList<List<Block>> columns = new ArrayList<>();
         ArrayList<Block> col = new ArrayList<Block>();
         float colH = 0.0f;
         for (Block b : blocks) {
@@ -246,7 +247,7 @@ public final class ShoreHud {
         columns.add(col);
         Matrix3x2fStack m = ctx.method_51448();
         float colX = 4.0f;
-        for (List list : columns) {
+        for (List<Block> list : columns) {
             float height = -2.0f;
             float width = 0.0f;
             for (Block b : list) {

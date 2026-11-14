@@ -23,7 +23,7 @@ public abstract class BrightnessMixin {
             return;
         }
         class_310 client = class_310.method_1551();
-        if (client == null || client.field_1690 == null || this != client.field_1690.method_42473()) {
+        if (client == null || client.field_1690 == null || (Object)this != client.field_1690.method_42473()) {
             return;
         }
         Object object = cir.getReturnValue();

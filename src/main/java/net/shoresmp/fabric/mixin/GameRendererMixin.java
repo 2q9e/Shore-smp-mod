@@ -29,7 +29,7 @@ public abstract class GameRendererMixin {
         }
         double divisor = ShoreTools.fovDivisor();
         if (divisor != 1.0) {
-            cir.setReturnValue((Object)Float.valueOf((float)((double)cir.getReturnValueF() / divisor)));
+            cir.setReturnValue(Float.valueOf((float)((double)cir.getReturnValueF() / divisor)));
         }
     }
 }

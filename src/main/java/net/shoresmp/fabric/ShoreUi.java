@@ -4,6 +4,7 @@
 package net.shoresmp.fabric;
 
 import java.io.InputStream;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import net.minecraft.class_1011;
@@ -180,34 +181,13 @@ final class ShoreUi {
             return cached;
         }
         class_1011 src = ICON_SOURCES.computeIfAbsent(name, n -> {
-            class_1011 class_10112;
-            block8: {
-                class_2960 file = n.equals("@logo") ? class_2960.method_60655((String)"shoremod", (String)"textures/font/badge.png") : class_2960.method_60655((String)"shoremod", (String)("textures/gui/icon/" + n + ".png"));
-                InputStream in = ((class_3298)this.mc.method_1478().method_14486(file).orElseThrow()).method_14482();
-                try {
-                    class_10112 = class_1011.method_4309((InputStream)in);
-                    if (in == null) break block8;
-                }
-                catch (Throwable throwable) {
-                    try {
-                        if (in != null) {
-                            try {
-                                in.close();
-                            }
-                            catch (Throwable throwable2) {
-                                throwable.addSuppressed(throwable2);
-                            }
-                        }
-                        throw throwable;
-                    }
-                    catch (Exception e) {
-                        ShoreClient.LOG.warn("Missing ShoreMod icon {}", n);
-                        return null;
-                    }
-                }
-                in.close();
+            class_2960 file = n.equals("@logo") ? class_2960.method_60655((String)"shoremod", (String)"textures/font/badge.png") : class_2960.method_60655((String)"shoremod", (String)("textures/gui/icon/" + n + ".png"));
+            try (InputStream in = ((class_3298)this.mc.method_1478().method_14486(file).orElseThrow()).method_14482()) {
+                return class_1011.method_4309(in);
+            } catch (IOException e) {
+                ShoreClient.LOG.warn("Missing ShoreMod icon {}", n);
+                return null;
             }
-            return class_10112;
         });
         if (src == null) {
             return null;

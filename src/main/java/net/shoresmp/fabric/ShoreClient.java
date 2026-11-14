@@ -188,9 +188,9 @@ implements ClientModInitializer {
             ShoreTools.tick(client);
             ShorePvp.tick(client);
             if (ShoreClient.config.extendedChat) {
-                client.field_1690.method_42550().method_41748((Object)ShoreClient.config.chatOpacity);
+                client.field_1690.method_42550().method_41748(ShoreClient.config.chatOpacity);
             } else if (this.originalChatOpacity != null) {
-                client.field_1690.method_42550().method_41748((Object)this.originalChatOpacity);
+                client.field_1690.method_42550().method_41748(this.originalChatOpacity);
             }
         });
         ClientLifecycleEvents.CLIENT_STARTED.register(client -> {
@@ -200,7 +200,7 @@ implements ClientModInitializer {
             recorder.close();
             ShoreTools.restoreZoomInput(client);
             if (this.originalChatOpacity != null) {
-                client.field_1690.method_42550().method_41748((Object)this.originalChatOpacity);
+                client.field_1690.method_42550().method_41748(this.originalChatOpacity);
             }
         });
         ShoreCommands.register();

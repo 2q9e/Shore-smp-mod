@@ -244,7 +244,8 @@ public final class ShoreTools {
             List buttons = Screens.getButtons((class_437)screen);
             int bx = w / 2 - 100;
             int by = -1;
-            for (class_339 b2 : buttons) {
+            for (Object button : buttons) {
+                class_339 b2 = (class_339)button;
                 if (b2.method_46427() + b2.method_25364() + 4 <= by) continue;
                 bx = b2.method_46426() + (b2.method_25368() - 200) / 2;
                 by = b2.method_46427() + b2.method_25364() + 4;

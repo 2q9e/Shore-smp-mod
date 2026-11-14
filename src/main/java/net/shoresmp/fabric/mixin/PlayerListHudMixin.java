@@ -18,7 +18,7 @@ public abstract class PlayerListHudMixin {
     @Inject(method={"method_1918"}, at={@At(value="RETURN")}, cancellable=true)
     private void shore$tabBadge(class_640 entry, CallbackInfoReturnable<class_2561> cir) {
         if (ShoreClient.config != null && ShoreClient.config.badges && ShoreClient.config.badgeTab && cir.getReturnValue() != null && ShoreClient.roster.users().containsKey(entry.method_2966().id())) {
-            cir.setReturnValue((Object)ShoreBadge.prependTab((class_2561)cir.getReturnValue()));
+            cir.setReturnValue(ShoreBadge.prependTab(cir.getReturnValue()));
         }
     }
 }

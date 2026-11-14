@@ -25,7 +25,9 @@ public final class ShoreSettingsChecks {
     private static ShoreScreen.Row row(ShoreScreen screen, String title) throws ReflectiveOperationException {
         Field field = ShoreScreen.class.getDeclaredField("rows");
         field.setAccessible(true);
-        return ((List)field.get((Object)screen)).stream().filter(r -> r.title.equals(title)).findFirst().orElseThrow();
+        @SuppressWarnings("unchecked")
+        List<ShoreScreen.Row> rows = (List<ShoreScreen.Row>)field.get(screen);
+        return rows.stream().filter(r -> r.title.equals(title)).findFirst().orElseThrow();
     }
 
     public static void run() {
