@@ -431,15 +431,15 @@ extends class_437 {
             ctx.method_27535(this.field_22793, stack.method_7964(), 6, 6, -1);
         }
         for (int i = 0; i < 27; ++i) {
-            class_1799 item;
+            class_1799 entry;
             int sx = 5 + i % 9 * 18;
             int sy = 5 + titleH + i / 9 * 18;
             if (c.shulkerEmptySlots) {
                 ctx.method_25294(sx, sy, sx + 17, sy + 17, 0x22FFFFFF);
             }
-            if ((item = (class_1799)items.get(i)).method_7960()) continue;
-            ctx.method_51427(item, sx, sy);
-            ctx.method_51431(this.field_22793, item, sx, sy);
+            if ((entry = (class_1799)items.get(i)).method_7960()) continue;
+            ctx.method_51427(entry, sx, sy);
+            ctx.method_51431(this.field_22793, entry, sx, sy);
         }
         m.popMatrix();
     }

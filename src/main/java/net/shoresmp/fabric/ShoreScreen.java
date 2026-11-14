@@ -1313,14 +1313,15 @@ extends class_437 {
         String[] stringArray = CATEGORIES;
         int n = stringArray.length;
         for (int i = 0; i < n && !(x + (w = Math.max(44.0f, this.ui.width(cat = stringArray[i], this.sel0(cat), 13.0f) + 24.0f)) > searchX - 12.0f); ++i) {
-            boolean sel = this.category.equals(cat);
+            String selectedCategory = cat;
+            boolean sel = this.category.equals(selectedCategory);
             boolean h = this.hit(x, cy, w, ch, () -> {
-                this.category = cat;
+                this.category = selectedCategory;
                 this.scrollTarget = 0.0f;
                 this.scroll = 0.0f;
             });
             this.ui.round(x, cy, w, ch, 8.0f, sel ? (h ? ShoreUi.mix(accent, -1, 0.12f) : accent) : (h ? -14276048 : -14934236));
-            this.ui.centered(cat, sel, 13.0f, x + w / 2.0f, cy + (ch - 13.0f) / 2.0f, sel ? ShoreScreen.onAccent() : (h ? -723465 : -6577750), w - 10.0f);
+            this.ui.centered(selectedCategory, sel, 13.0f, x + w / 2.0f, cy + (ch - 13.0f) / 2.0f, sel ? ShoreScreen.onAccent() : (h ? -723465 : -6577750), w - 10.0f);
             x += w + 7.0f;
         }
         float top = cy + ch + 16.0f;
@@ -1452,7 +1453,11 @@ extends class_437 {
             if (back) {
                 this.tooltip = "Back to mods";
             }
-            this.ui.round(rx, hy, rw, hh, 7.0f, (rh = this.hit(rx = ix + iw - (rw = this.ui.width(reset = "Reset Settings", false, 12.5f) + 26.0f), hy, rw, hh, () -> this.resetModule(m))) ? -14012619 : -14802393);
+            reset = "Reset Settings";
+            rw = this.ui.width(reset, false, 12.5f) + 26.0f;
+            rx = ix + iw - rw;
+            rh = this.hit(rx, hy, rw, hh, () -> this.resetModule(m));
+            this.ui.round(rx, hy, rw, hh, 7.0f, rh ? -14012619 : -14802393);
             this.ui.text(reset, false, 12.5f, rx + 13.0f, hy + (hh - 12.5f) / 2.0f, rh ? -723465 : -6577750);
             float fx = rx - hh - 8.0f;
             boolean fav = this.favorite(m);
