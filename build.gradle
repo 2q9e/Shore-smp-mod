@@ -22,7 +22,12 @@ dependencies {
 
     modImplementation files('libs/rinku-Jka5IbZi.jar')
     compileOnly files('libs/mixinextras-fabric-0.4.1.jar')
-    include files('libs/rinku-Jka5IbZi.jar')
+}
+
+tasks.named('jar') {
+    from('libs/rinku-Jka5IbZi.jar') {
+        into 'META-INF/jars'
+    }
 }
 
 processResources {
