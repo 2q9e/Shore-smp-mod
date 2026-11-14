@@ -395,7 +395,7 @@ final class ShoreSelfTest {
                 inv.method_5447(12, new class_1799((class_1935)class_1802.field_8145, 8));
                 inv.method_5447(13, new class_1799((class_1935)class_1802.field_8145, 8));
                 class_1799 box = new class_1799((class_1935)class_1802.field_8816);
-                class_9288 contents = class_9288.method_57493(List.of(new class_1799((class_1935)class_1802.field_8477, 12), new class_1799((class_1935)class_1802.field_8463, 3), class_1799.field_8037, new class_1799((class_1935)class_1802.field_8634, 16), class_1799.field_8037, class_1799.field_8037, new class_1799((class_1935)class_1802.field_8288), class_1799.field_8037, class_1799.field_8037, new class_1799((class_1935)class_1802.field_8281, 64))));
+                class_9288 contents = class_9288.method_57493(List.of(new class_1799((class_1935)class_1802.field_8477, 12), new class_1799((class_1935)class_1802.field_8463, 3), class_1799.field_8037, new class_1799((class_1935)class_1802.field_8634, 16), class_1799.field_8037, class_1799.field_8037, new class_1799((class_1935)class_1802.field_8288), class_1799.field_8037, class_1799.field_8037, new class_1799((class_1935)class_1802.field_8281, 64)));
                 box.method_57379(class_9334.field_49622, contents);
                 inv.method_5447(17, box);
             });
