@@ -1,0 +1,17 @@
+ShoreMod includes the unmodified Rinku 3.0.4 library for Fabric 1.21.11
+as a nested JAR. Rinku is licensed under LGPL-2.1; its license is included
+alongside this notice. Rinku and its bundled dependencies retain their
+respective copyrights and licenses.
+
+Authors credited by Rinku: Keksuccino, ds58, CinemaMod Group.
+Upstream source: https://github.com/Keksuccino/Rinku
+3.0.4 source checkpoint:
+https://github.com/Keksuccino/Rinku/tree/8e4fe964e5d8ef21580f58773975bbf9983d9358
+Exact distributed binary:
+https://modrinth.com/mod/rinku/version/Jka5IbZi
+
+The library is not shaded or renamed. Fabric Loader can resolve a compatible
+separate Rinku installation in place of the bundled dependency. The native
+Chromium/JCEF runtime is managed by Rinku and is not embedded by ShoreMod.
+Users may modify or replace Rinku under its license. Reverse engineering
+ShoreMod for debugging modifications to Rinku is permitted.

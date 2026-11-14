@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "shoremod",
+  "version": "1.1.0",
+  "name": "ShoreMod",
+  "icon": "assets/shoremod/textures/font/badge.png",
+  "description": "ShoreSMP tickets, mod badges, PvP HUD, inventory tools, clips and giveaways.",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "net.shoresmp.fabric.ShoreClient"
+    ],
+    "preLaunch": [
+      "net.shoresmp.fabric.ShoreCompatPreflight"
+    ]
+  },
+  "mixins": [
+    "shoremod.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": "\u003e\u003d0.18.4",
+    "minecraft": "1.21.11",
+    "java": "\u003e\u003d21",
+    "fabric-api": "\u003e\u003d0.141.6",
+    "rinku": "3.0.4"
+  },
+  "custom": {
+    "shoremod:build-target": "1.21.11",
+    "shoremod:embedded-browser": true
+  },
+  "jars": [
+    {
+      "file": "META-INF/jars/rinku-Jka5IbZi.jar"
+    }
+  ]
+}
