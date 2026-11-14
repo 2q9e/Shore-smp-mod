@@ -75,27 +75,9 @@ extends class_437 {
             boolean hov = mx >= (bx -= bw) && my >= by && mx < bx + bw && my < by + 38.0f;
             this.hits.add(new Hit(bx, by, bw, 38.0f, b.action()));
             switch (b.style()) {
-                case 1: {
-                    int n;
-                    if (hov) {
-                        n = ShoreUi.mix(accent, -1, 0.12f);
-                        break;
-                    }
-                    n = accent;
-                    break;
-                }
-                case 2: {
-                    int n;
-                    if (hov) {
-                        n = -1025955;
-                        break;
-                    }
-                    n = -1750963;
-                    break;
-                }
-                default: {
-                    int n = bg = hov ? -14012619 : -14802393;
-                }
+                case 1 -> bg = hov ? ShoreUi.mix(accent, -1, 0.12f) : accent;
+                case 2 -> bg = hov ? -1025955 : -1750963;
+                default -> bg = hov ? -14012619 : -14802393;
             }
             int fg = b.style() == 1 ? (ShoreDialog.light(accent) ? -15921390 : -1) : (b.style() == 2 ? -1 : -723465);
             this.ui.round(bx, by, bw, 38.0f, 9.0f, bg);
