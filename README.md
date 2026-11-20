@@ -1,6 +1,8 @@
-# ShoreMod Fabric source
+# ShoreMod for Fabric
 
-Reconstructed, buildable source for ShoreMod Fabric 1.21.11, recovered from the supplied `ShoreMod-Fabric-1.21.11-1.1.0.jar` with CFR 0.152. The Java files are decompiled output, not the original authoring source; CFR notices are retained in each file.
+ShoreMod is a client-side Fabric companion for ShoreSMP on Minecraft 1.21.11. It includes support tickets, roster badges, HUD and inventory tools, clip recording, and other server-connected features. This checkout was reconstructed from the supplied ShoreMod 1.1.0 JAR with CFR 0.152. The Java files retain their decompilation notices.
+
+The [Fabric manifest](src/main/resources/fabric.mod.json) records the supported game version, loader, and bundled Rinku dependency.
 
 ## Build
 
